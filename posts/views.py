@@ -1,14 +1,10 @@
-from rest_framework import viewsets
-from rest_framework.response import Response
-
-from .serializers import CommentSerializer, PostSerializer
-
-from.models import Post, Comment
 from django.shortcuts import get_object_or_404
-from rest_framework import status
+from rest_framework import status, viewsets
 from rest_framework.response import Response
 
+from .models import Comment, Post
 from .permissions import PostAndCommentPermissions
+from .serializers import CommentSerializer, PostSerializer
 
 
 class PostViewSet(viewsets.ModelViewSet):
