@@ -57,7 +57,7 @@ class CommentViewSet(viewsets.ModelViewSet):
             post = get_object_or_404(Post, id=kwargs.get('post_id'))
             serializer.save(author=request.user, post=post)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
-    
+ 
     def update(self, request, pk=None, **kwargs):
         comment = get_object_or_404(Comment, id=pk)
         post = get_object_or_404(Post, id=kwargs.get('post_id'))
