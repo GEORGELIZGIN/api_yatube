@@ -12,7 +12,7 @@ comments_router.register(
 posts_router.register('posts', PostViewSet)
 
 urlpatterns = [
-    path('api-token-auth/', views.obtain_auth_token),
-    path('', include(posts_router.urls)),
-    path(r'posts/', include(comments_router.urls)),
+    path('v1/api-token-auth/', views.obtain_auth_token),
+    path('v1/', include(posts_router.urls)),
+    path(r'v1/posts/', include(comments_router.urls)),
 ]
